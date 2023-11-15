@@ -17,3 +17,17 @@ def calories_counter(items):
           raise MealTooBigError(total)
     
     return total
+
+
+def price_counter(items):
+    total = 0
+    for item in items:
+        if item in meals.keys():
+                total += meals[item]["price"]
+        elif item in combos.keys():
+                total += combos[item]["price"]
+        else:
+            print(f"{item} is not in the menu.")
+
+    
+    return total
