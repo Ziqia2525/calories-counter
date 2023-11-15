@@ -1,0 +1,15 @@
+# ignore prototyping
+main.ipynb
+
+# ignore generated files
+.DS_Store
+**/.DS_Store
+
+# ignore virtual enviroment
+.venv
+
+# ignore __pycache__
+__pycache__
+__pycache__/*
+*/__pycache__
+*/__pycache__/*
