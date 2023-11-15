@@ -1,5 +1,5 @@
-from data import meals,combos
-from exceptions import MealTooBigError
+from module.data import meals,combos
+from module.exceptions import MealTooBigError
 
 combos = {combo["id"]:combo for combo in combos}
 meals = {meal["id"]:meal for meal in meals}
