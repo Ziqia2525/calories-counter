@@ -1,5 +1,5 @@
 from module.data import meals,combos
-from module.exceptions import MealTooBigError
+from module.exceptions import MealTooBigError,InvalidItemId
 
 combos = {combo["id"]:combo for combo in combos}
 meals = {meal["id"]:meal for meal in meals}
@@ -12,7 +12,7 @@ def calories_counter(items):
         elif item in combos.keys():
                 total += calories_counter(combos[item]["meals"])
         else:
-            print(f"{item} is not in the menu.")
+            raise InvalidItemId(item)
     if total > 2000:
           raise MealTooBigError(total)
     
@@ -27,7 +27,7 @@ def price_counter(items):
         elif item in combos.keys():
                 total += combos[item]["price"]
         else:
-            print(f"{item} is not in the menu.")
+            raise InvalidItemId(item)
 
     
     return total
